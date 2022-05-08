@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:280738294603:android:9fc72526f7f2d457da96ce",
+        "mobilesdk_app_id": "1:280738294603:android:0ea52653eb6ba617da96ce",
         "android_client_info": {
-          "package_name": "com.portsip"
+          "package_name": "com.example.fcm"
         }
       },
       "oauth_client": [

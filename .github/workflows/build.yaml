@@ -7,29 +7,35 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the code
+    
+      - name: Checkout code
         uses: actions/checkout@v3
         with: 
-          repository: 'hugeek95/portSipKotlin'
-      - name: Checkout the config
+          repository: 'jirawatee/FirebaseCloudMessaging-Android'
+          
+      - name: Checkout config
         uses: actions/checkout@v3
         with: 
           path: 'config'
-      - name: Setup ENV
+          
+      - name: Setup env
         run: |
-          cp -R config/google-services.json SIPSample/google-services.js
-          chmod 777 SIPSample/google-services.js
-      - name: Setup JDK
+          cp -R config/google-services.json app/google-services.json
+          chmod 777 app/google-services.json
+          
+      - name: Setup jdk
         uses: actions/setup-java@v1
         with:
-          java-version: 28
-      - name: Build the app
+          java-version: 1.8
+          
+      - name: Build app
         working-directory: ./
         run: |
           if [ ! -f "gradlew" ]; then gradle wrapper; fi
           chmod +x gradlew
           ./gradlew assembleDebug --stacktrace
-      - name: Upload APK
+          
+      - name: Upload apk
         uses: actions/upload-artifact@v2
         with:
           name: debug

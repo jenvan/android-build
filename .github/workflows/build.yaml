@@ -7,28 +7,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout the code
+    
+      - name: Checkout code
         uses: actions/checkout@v3
         with: 
-          repository: 'learnin9/portsip-voip-sdk-sample-for-android'
-      - name: Checkout the config
+          repository: 'hugeek95/portSipKotlin'
+          
+      - name: Checkout config
         uses: actions/checkout@v3
         with: 
           path: 'config'
-      - name: Setup ENV
+          
+      - name: Setup env
         run: |
-          cp -R config/google-services.json SIPSample_AndroidStudio/SIPSample/google-services.js
-          chmod 777 SIPSample_AndroidStudio/SIPSample/google-services.js
-      - name: Setup JDK
-        uses: actions/setup-java@v1
-        with:
-          java-version: 1.8
-      - name: Build the app
-        working-directory: ./SIPSample_AndroidStudio
-        run: |
-          if [ ! -f "gradlew" ]; then gradle wrapper; fi
-          chmod +x gradlew
-          ./gradlew assembleDebug --stacktrace
+          cp -R config/google-services.json google-services.js
+          
+      - name: Build app
+        uses: Raul6469/android-gradle-action@2.0.0
+        with: 
+          script: assembleDebug
+          
       - name: Upload APK
         uses: actions/upload-artifact@v2
         with:

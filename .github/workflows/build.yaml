@@ -14,8 +14,11 @@ jobs:
       - name: Checkout the config
         uses: actions/checkout@v3
         with: 
-          path: 'SIPSample'
-      - name: Set up JDK
+          path: 'config'
+      - name: Setup ENV
+        run: |
+          cp -R config/*.* SIPSample
+      - name: Setup JDK
         uses: actions/setup-java@v1
         with:
           java-version: 1.8

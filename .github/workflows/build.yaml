@@ -11,7 +11,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
         with: 
-          repository: 'hugeek95/portSipKotlin'
+          repository: 'jirawatee/FirebaseCloudMessaging-Android'
           
       - name: Checkout config
         uses: actions/checkout@v3
@@ -27,7 +27,7 @@ jobs:
         with: 
           script: assemble
           
-      - name: Upload APK
+      - name: Upload apk
         uses: actions/upload-artifact@v2
         with:
           name: debug

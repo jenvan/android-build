@@ -31,6 +31,7 @@ jobs:
       - name: Build app
         working-directory: ./Examples/simple-fcm-client
         run: |
+          npm install react-native-fcm --save
           npm install
           if [ ! -f "gradlew" ]; then gradle wrapper; fi
           chmod +x gradlew

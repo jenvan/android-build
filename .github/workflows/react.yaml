@@ -22,18 +22,18 @@ jobs:
       - name: Setup env
         run: |
           chmod 777 config/*
-          cp -f config/google-services.json ./Examples/simple-fcm-client/android/app/
-          cp -f config/AndroidManifest.xml  ./Examples/simple-fcm-client/android/app/src/main/
-          cat /home/runner/work/android-build/android-build/Examples/simple-fcm-client/android/app/src/main/AndroidManifest.xml
-          sed 's/16/19/g' -i ./Examples/simple-fcm-client/android/app/build.gradle
-          cat ./Examples/simple-fcm-client/android/app/build.gradle
+          cp -f config/google-services.json ./Examples/firebase-migration/android/app/
+          cp -f config/AndroidManifest.xml  ./Examples/firebase-migration/android/app/src/main/
+          cat /home/runner/work/android-build/android-build/Examples/firebase-migration/android/app/src/main/AndroidManifest.xml
+          sed 's/16/19/g' -i ./Examples/firebase-migration/android/app/build.gradle
+          cat ./Examples/firebase-migration/android/app/build.gradle
       - name: Setup jdk
         uses: actions/setup-java@v1
         with:
           java-version: 1.8
           
       - name: Build app
-        working-directory: ./Examples/simple-fcm-client
+        working-directory: ./Examples/firebase-migration
         run: |
           npm install --legacy-peer-deps
           cd android

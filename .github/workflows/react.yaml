@@ -21,7 +21,7 @@ jobs:
       - name: Setup env
         run: |
           chmod 777 config/google-services.json
-          cp -R config/google-services.json /Examples/simple-fcm-client/android/google-services.json
+          cp -R config/google-services.json ./Examples/simple-fcm-client/android/google-services.json
           
       - name: Setup jdk
         uses: actions/setup-java@v1

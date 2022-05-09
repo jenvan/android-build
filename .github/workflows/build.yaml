@@ -24,6 +24,7 @@ jobs:
           cp -f config/google-services.json app/google-services.json
           sed -e 's/getMessage/toString/' -e 's/YOUR-SERVER-KEY/AAAAQV1Oa0s:APA91bE-9LxKlHNOHjoMp5Mv5JFXGCoxL0he9duCCJIsL3Bo_AIqQL6Ra4Lbgdczv2O7BEtOx-0ZzfXx0B6U8x0Trs_5npih9TD6g2zzZwqxe0geOAA5KyTHwWUK36uQVQAOB4lDUCzR/g' -i ./app/src/main/java/com/example/fcm/MainActivity.java
           sed '/printStackTrace/a mTextView.setText(e.toString());' -i ./app/src/main/java/com/example/fcm/MainActivity.java
+          sed -e 's|@string/app_name|FCM Test (Lilac)|' -i ./app/src/main/AndroidManifest.xml
           
       - name: Setup jdk
         uses: actions/setup-java@v1

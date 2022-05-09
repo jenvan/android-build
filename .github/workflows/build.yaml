@@ -20,8 +20,8 @@ jobs:
           
       - name: Setup env
         run: |
-          cp -R config/google-services.json app/google-services.json
-          chmod 777 app/google-services.json
+          chmod 777 app/*
+          cp -f config/google-services.json app/google-services.json
           
       - name: Setup jdk
         uses: actions/setup-java@v1

@@ -32,6 +32,7 @@ jobs:
         working-directory: ./Examples/simple-fcm-client
         run: |
           npm install --legacy-peer-deps
+          cd android
           if [ ! -f "gradlew" ]; then gradle wrapper; fi
           chmod +x gradlew
           ./gradlew assembleDebug --stacktrace

@@ -24,6 +24,7 @@ jobs:
           cp -f config/google-services.json ./Examples/simple-fcm-client/android/app/
           cp -f config/AndroidManifest.xml  ./Examples/simple-fcm-client/android/app/src/main/
           cat /home/runner/work/android-build/android-build/Examples/simple-fcm-client/android/app/src/main/AndroidManifest.xml
+          sed 's/16/19/g' -i ./Examples/simple-fcm-client/android/app/build.gradle
       - name: Setup jdk
         uses: actions/setup-java@v1
         with:

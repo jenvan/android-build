@@ -1,4 +1,4 @@
-name: android_build
+name: android_build_react
 
 on:
   workflow_dispatch:
@@ -20,7 +20,7 @@ jobs:
           
       - name: Setup env
         run: |
-          chmod 777 google-services.json
+          chmod 777 config/google-services.json
           cp -R config/google-services.json /Examples/simple-fcm-client/android/google-services.json
           
       - name: Setup jdk

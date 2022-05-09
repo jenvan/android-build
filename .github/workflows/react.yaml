@@ -23,10 +23,9 @@ jobs:
         run: |
           chmod 777 config/*
           cp -f config/google-services.json ./Examples/firebase-migration/android/app/
-          cp -f config/AndroidManifest.xml  ./Examples/firebase-migration/android/app/src/main/
-          cat /home/runner/work/android-build/android-build/Examples/firebase-migration/android/app/src/main/AndroidManifest.xml
+          sed 's/16/19/g' -i ./Examples/firebase-migration/android/app/src/main/AndroidManifest.xml
           sed 's/16/19/g' -i ./Examples/firebase-migration/android/app/build.gradle
-          cat ./Examples/firebase-migration/android/app/build.gradle
+      
       - name: Setup jdk
         uses: actions/setup-java@v1
         with:

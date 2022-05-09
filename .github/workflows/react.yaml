@@ -31,8 +31,7 @@ jobs:
       - name: Build app
         working-directory: ./Examples/simple-fcm-client
         run: |
-          npm install react-native-fcm --save
-          npm install
+          npm install --legacy-peer-deps
           if [ ! -f "gradlew" ]; then gradle wrapper; fi
           chmod +x gradlew
           ./gradlew assembleDebug --stacktrace

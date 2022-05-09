@@ -12,6 +12,7 @@ jobs:
         uses: actions/checkout@v3
         with: 
           repository: 'evollu/react-native-fcm'
+          ref: 'firebase'
           
       - name: Checkout config
         uses: actions/checkout@v3
@@ -25,6 +26,7 @@ jobs:
           cp -f config/AndroidManifest.xml  ./Examples/simple-fcm-client/android/app/src/main/
           cat /home/runner/work/android-build/android-build/Examples/simple-fcm-client/android/app/src/main/AndroidManifest.xml
           sed 's/16/19/g' -i ./Examples/simple-fcm-client/android/app/build.gradle
+          cat ./Examples/simple-fcm-client/android/app/build.gradle
       - name: Setup jdk
         uses: actions/setup-java@v1
         with:
